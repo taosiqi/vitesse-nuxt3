@@ -1,20 +1,19 @@
-<script setup>
-useHead({
-  title: 'Vitesse Nuxt 3',
-  link: [
-    {
-      rel: 'icon', type: 'image/png', href: '/nuxt.png',
-    },
-  ],
-})
-</script>
-
 <template>
   <NuxtLayout>
+<!--    <NuxtLoadingIndicator /> &lt;!&ndash; here &ndash;&gt;-->
     <NuxtPage />
   </NuxtLayout>
 </template>
-
+<script setup>
+// useHead({
+//   title: 'Vitesse Nuxt 3',
+//   link: [
+//     {
+//       rel: 'icon', type: 'image/png', href: '/nuxt.png',
+//     },
+//   ],
+// })
+</script>
 <style>
 html, body , #__nuxt{
   height: 100vh;
