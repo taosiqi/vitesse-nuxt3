@@ -3,7 +3,6 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@unocss/nuxt',
     '@pinia/nuxt',
-    '@nuxtjs/color-mode',
   ],
   experimental: {
     reactivityTransform: true,
@@ -28,9 +27,4 @@ export default defineNuxtConfig({
     '@unocss/reset/tailwind.css',
   ],
   vite: {},
-  colorMode: {
-    classSuffix: '',
-    fallback: 'light',
-    storageKey: 'color-mode',
-  },
 })

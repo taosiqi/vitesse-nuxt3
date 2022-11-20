@@ -1,9 +1,7 @@
 <template>
   <div>
     <Suspense>
-      <div>
-        hello
-      </div>
+      <van-button type="primary" @click="go">go hi</van-button>
       <template #fallback>
         <div op50 italic>
           <span animate-pulse>Loading...</span>
@@ -12,3 +10,14 @@
     </Suspense>
   </div>
 </template>
+
+<script setup lang="ts">
+const router = useRouter()
+const go = () => {
+  router.push(`/hi/${encodeURIComponent('思淇大大')}`)
+}
+</script>
+
+<style lang="scss">
+
+</style>

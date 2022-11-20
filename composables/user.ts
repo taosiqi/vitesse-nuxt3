@@ -5,7 +5,7 @@ interface User {
 export const useUserStore = defineStore('user', {
   state: (): User => {
     return {
-      user: 'taosiqi',
+      user: '',
     }
   },
   actions: {
@@ -15,7 +15,7 @@ export const useUserStore = defineStore('user', {
   },
   getters: {
     currentOrg: (state) => {
-      return `${state.user}-getters`
+      return `研发部${state.user}`
     },
   },
 })
