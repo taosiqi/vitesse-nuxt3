@@ -1,5 +1,3 @@
-// import Components from 'unplugin-vue-components/vite'
-// import { VantResolver } from 'unplugin-vue-components/resolvers'
 export default defineNuxtConfig({
   modules: [
     '@vueuse/nuxt',
@@ -11,16 +9,6 @@ export default defineNuxtConfig({
     inlineSSRStyles: false,
     externalVue: true,
   },
-  // vite: {
-  //   plugins: [
-  //     Components({
-  //       resolvers: [VantResolver()],
-  //     }),
-  //   ],
-  // },
-  // build: {
-  //   transpile: ['vant'],
-  // },
   app: {
     head: {
       title: '移动端Nuxt3模版',
