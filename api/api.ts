@@ -16,5 +16,8 @@ export interface GoodData {
   list: Array<GoodDataList>
   total: number
 }
-export const getGoodsList = (params: Page) => useHttpGet<GoodData>('demo/goods', { lazy: true, params })
+
+export const getGoodsList = (params: Page) => {
+  return useHttpGet<GoodData>('demo/goods', { lazy: true, params })
+}
 

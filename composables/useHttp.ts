@@ -1,5 +1,5 @@
 import { showNotify } from 'vant'
-import { showMessage } from '@/api/status'
+import { showMessage } from '@/composables/status'
 export const fetchConfig = {
   baseURL: 'https://api.virapi.com/vir_github24hahb0a455de/',
 }
@@ -18,12 +18,23 @@ function useGetFetchOptions(options: any = {}) {
 }
 
 // http请求封装
-export async function useHttp<T>(url: string, options: any = {}) {
+export async function useHttp<T>(url: string, options: any = {}): Promise<HttpResponse<T>> {
   options = useGetFetchOptions(options)
   return await useFetch<HttpResponse<T>>(url, options).then((res) => {
-    if (res.error.value)
-      showNotify(showMessage(res.error.value.statusCode))
-    return res
+    const { error, data } = res
+    if (!error.value && data.value && data.value.code === 200) {
+      return data.value
+    }
+    else {
+      // 整理错误参数
+      const e = {
+        code: error.value?.statusCode || data.value?.code,
+        message: `${error.value?.name}${error.value?.statusMessage}` || data.value?.message,
+        data: '',
+      }
+      showNotify(showMessage(e.code))
+      return Promise.reject(e)
+    }
   })
 }
 
