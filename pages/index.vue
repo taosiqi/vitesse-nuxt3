@@ -42,7 +42,7 @@ const getGoodsListData = async () => {
   // })
   // data.value = count.value.data.list
   getGoodsList({ page: 1, page_size: 20 }).then((res) => {
-    console.log(res.data)
+    // console.log(res.data)
     goodData.value = res.data.list
   })
 }

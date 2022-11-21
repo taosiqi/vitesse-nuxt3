@@ -7,6 +7,7 @@ specifiers:
   '@pinia/nuxt': ^0.4.3
   '@unocss/nuxt': ^0.46.5
   '@vueuse/nuxt': ^9.5.0
+  '@xianzhengquan/postcss-px-2-vw': ^0.0.1
   eslint: ^8.27.0
   nuxt: ^3.0.0
   pinia: ^2.0.23
@@ -23,6 +24,7 @@ devDependencies:
   '@pinia/nuxt': 0.4.4_typescript@4.9.3
   '@unocss/nuxt': 0.46.5
   '@vueuse/nuxt': 9.5.0_nuxt@3.0.0
+  '@xianzhengquan/postcss-px-2-vw': 0.0.1
   eslint: 8.28.0
   nuxt: 3.0.0_hsf322ms6xhhd4b5ne6lb74y4a
   pinia: 2.0.24_typescript@4.9.3
@@ -1566,6 +1568,10 @@ packages:
     transitivePeerDependencies:
       - '@vue/composition-api'
       - vue
+    dev: true
+
+  /@xianzhengquan/postcss-px-2-vw/0.0.1:
+    resolution: {integrity: sha512-QFmMR2q+q58WfW5ylzDtA5HdRz/tQ5/2QNglLb6iSan4IYnlXpTKZpIC8jIA/I2tKAEgZfSh5FmwIyM/qbd4FA==}
     dev: true
 
   /@zhead/schema/1.0.3:
