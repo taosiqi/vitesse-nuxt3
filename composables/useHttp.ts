@@ -13,6 +13,7 @@ function useGetFetchOptions(options: any = {}) {
   options.baseURL = options.baseURL ?? fetchConfig.baseURL
   options.headers = {
     'app-token': '$2a$10$6a5alD8TIZIPqjczCd9um.AJLXb6LS.3vOMLS1QQjUPzfwC3SbxsC',
+    'Content-Type': 'application/json',
   }
   return options
 }
@@ -20,6 +21,7 @@ function useGetFetchOptions(options: any = {}) {
 // http请求封装
 export async function useHttp<T>(url: string, options: any = {}): Promise<HttpResponse<T>> {
   options = useGetFetchOptions(options)
+  delete options.params
   return await useFetch<HttpResponse<T>>(url, options).then((res) => {
     const { error, data } = res
     if (!error.value && data.value && data.value.code === 200) {
@@ -37,15 +39,16 @@ export async function useHttp<T>(url: string, options: any = {}): Promise<HttpRe
     }
   })
 }
-
 // GET请求
 export function useHttpGet<T>(url: string, options: any = {}) {
   options.method = 'GET'
+  options.query = options.params
   return useHttp<T>(url, options)
 }
 
 // POST请求
 export function useHttpPost<T>(url: string, options: any = {}) {
   options.method = 'POST'
+  options.body = options.params
   return useHttp<T>(url, options)
 }

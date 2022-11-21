@@ -7,11 +7,15 @@
         </van-button>
         <p />
         <van-button type="primary" class="mt-50!" @click="getGoodsListData">
-          获取接口数据
+          get请求
         </van-button>
         <div v-for="item in goodData" :key="item.name">
           {{ item.name }}
         </div>
+        <p />
+        <van-button type="primary" class="mt-50!" @click="setGoodsContent">
+          post请求
+        </van-button>
       </div>
       <template #fallback>
         <div op50 italic>
@@ -23,11 +27,13 @@
 </template>
 
 <script setup lang="ts">
-import type { GoodDataList } from '@/api/api'
-import { getGoodsList } from '@/api/api'
+import { ref } from 'vue'
+import { showNotify } from 'vant'
+import type { GoodDataListType } from '@/api/api'
+import { getHttpGoodsList, setHttpGoodsContent } from '@/api/api'
 
 const router = useRouter()
-const goodData = ref<Array<GoodDataList>>([])
+const goodData = ref<Array<GoodDataListType>>([])
 
 const go = () => {
   router.push(`/hi/${encodeURIComponent('思淇大大')}`)
@@ -44,11 +50,15 @@ const getGoodsListData = async () => {
   // })
   // console.log(res)
   // data.value = count.value.data.list
-  getGoodsList({ page: 1, page_size: 20 }).then((res) => {
+  getHttpGoodsList({ page: 1, page_size: 20 }).then((res) => {
     goodData.value = res.data.list
   })
 }
-getGoodsListData()
+const setGoodsContent = async () => {
+  setHttpGoodsContent({ id: '610000201409294302', content: '评论' }).then((res) => {
+    showNotify({ type: 'success', message: res.message })
+  })
+}
 </script>
 
 <style lang="scss">
