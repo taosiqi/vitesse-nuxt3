@@ -20,9 +20,10 @@
     "eslint": "^8.27.0",
     "nuxt": "^3.0.0",
     "pinia": "^2.0.23",
+    "sass": "^1.56.1",
     "typescript": "^4.9.3"
   },
   "dependencies": {
-    "vant": "^4.0.0-rc.7"
+    "vant": "^4.0.0-rc.8"
   }
 }
