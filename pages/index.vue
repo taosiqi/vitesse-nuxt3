@@ -31,19 +31,20 @@ const goodData = ref<Array<GoodDataList>>([])
 const go = () => {
   router.push(`/hi/${encodeURIComponent('思淇大大')}`)
 }
+
 const getGoodsListData = async () => {
   // 用这种方式，是和页面同步输出
-  // const { data: count } = await useFetch('https://api.virapi.com/vir_github24hahb0a455de/demo/goods', {
+  // const res = await useFetch('https://api.virapi.com/vir_github24hahb0a455de/demo/goods', {
   //   page: 1,
   //   page_size: 20,
   //   headers: {
   //     'app-token': '$2a$10$6a5alD8TIZIPqjczCd9um.AJLXb6LS.3vOMLS1QQjUPzfwC3SbxsC',
   //   },
   // })
+  // console.log(res)
   // data.value = count.value.data.list
   getGoodsList({ page: 1, page_size: 20 }).then((res) => {
-    // console.log(res.data)
-    goodData.value = res.data.list
+    goodData.value = res.data.value.data.list || []
   })
 }
 getGoodsListData()
