@@ -108,6 +108,7 @@ export default defineNuxtConfig({
 
 ```
 ## clone
+
 ```bash
 git clone https://github.com/taosiqi/vitesse-nuxt3.git
 cd vitesse-nuxt3
@@ -115,6 +116,7 @@ pnpm instll
 pnpm run dev
 ```
 ## github
+
 [GitHub直达](https://github.com/taosiqi/vitesse-nuxt3)
 ## 感谢
 该模版基于[antfu/vitesse-nuxt3](https://github.com/antfu/vitesse-nuxt3) 二次开发，[完善移动端所需配置👉]()
