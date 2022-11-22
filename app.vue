@@ -5,6 +5,7 @@
 </template>
 
 <script setup>
+useHead({ title: 'new标题' })
 </script>
 
 <style>

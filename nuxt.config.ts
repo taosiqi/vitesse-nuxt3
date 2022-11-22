@@ -9,6 +9,7 @@ export default defineNuxtConfig({
     inlineSSRStyles: false,
     externalVue: true,
   },
+  alias: {},
   app: {
     head: {
       title: '移动端Nuxt3模版',
