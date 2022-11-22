@@ -115,8 +115,10 @@ cd vitesse-nuxt3
 pnpm instll
 pnpm run dev
 ```
-## github
 
-[GitHub直达](https://github.com/taosiqi/vitesse-nuxt3)
+## [GitHub直达](https://github.com/taosiqi/vitesse-nuxt3)
+
+## [在线预览](http://input520.cn:3001/)
+
 ## 感谢
 该模版基于[antfu/vitesse-nuxt3](https://github.com/antfu/vitesse-nuxt3) 二次开发，[完善移动端所需配置👉]()
